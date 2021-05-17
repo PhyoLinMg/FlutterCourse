@@ -14,6 +14,8 @@ Syntax လေးကွာဟမှုကိုတစ်ချက်လောက�
 
 Example scenario ကတော့ ကျွှန်တော်တို့ List တစ်ခုကို random နံပါတ်တွေနဲ့ တည်ဆောက်ကြမယ် ပြီးရင် Print ထုတ်ပြမယ်ပေါ့
 
+ဒါက java နဲ့ရေးထားတာ
+
 ```java
 List<Integer> intList=new ArrayList<Integer>(10);
 for(int i=0;i<10;i++){
@@ -26,13 +28,14 @@ for(int item: intList){
 }
 ```
 
-
+ဒါက Dart နဲ့ရေးထားတာ
 
 ```dart
+//This is generating a list of random numbers
 var list=List<int>.generate(10, (int index) {
   return Random().nextInt(10);
-}); // [0, 1, 4]
-  
+}); 
+//looping list to show the items of the list
 list.forEach((item){
   print(item);
 });
