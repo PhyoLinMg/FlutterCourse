@@ -15,11 +15,57 @@
 
 ## Container
 
-Container တွေဆိုတာက margin,padding , width, height တွေစတဲ့ attribute တွေကို သူ့ရဲ့ နောက်မျိုုးဆက် widget တွေကို support ပေးတဲ့ widget ပါ။
+Container တွေဆိုတာက margin,padding ,background color, width, height တွေစတဲ့ attribute တွေကို သူ့ရဲ့ နောက်မျိုုးဆက် widget တွေကို support ပေးတဲ့ widget ပါ။
 
 မျက်လုံးထဲမြင်အောင်ပြောရရင် ဒီလိုမျိုုးပါ။
 
+![Container](https://static.javatpoint.com/tutorial/flutter/images/flutter-container.png)
 
+```dart
+Container(
+	width: 200.0,  
+    height: 100.0,  
+    color: Colors.green,   
+    padding: EdgeInsets.all(35),  
+    margin: EdgeInsets.all(20),  
+    child:Text("Hello world"),
+)
+```
+
+ပြီးတော့ ကျန်တဲ့ Properties တွေကို လိုက်လုပ်ကြည့်ကြမယ်
+
+**Alignment**
+
+Container ရဲ့ Alignment ကိုညှိတာပါ။ 
+
+```dart
+Container(
+	color:Colors.green,
+    alignment:Alignment.center,
+    child:Text("Hello")
+)
+```
+
+**Decoration**
+
+Containerရဲ့ Decoration ကတော့ သူ့ရဲ့ နောက်မျိုးဆက် Widget ကို နောက်က‌နေ Decorate လုပ်ပေးတာပေါ့
+
+ဘယ်လိုမျိုုးလဲဆိုတော့
+
+```
+Container(
+	decoration:BoxDecoration(
+		border: Border.all(color: Colors.black, width: 4),  
+        borderRadius: BorderRadius.circular(8),  
+        boxShadow: [  
+              new BoxShadow(color: Colors.green, offset: new Offset(6.0, 6.0),),  
+        ],
+	),
+	child:Text("Hello world")
+)
+```
+
+BoxDecoration အကြောင်းသိချင်ရင်တော့ [ဒီမှာ](https://www.woolha.com/tutorials/flutter-using-boxdecoration-examples) ကြည့်လို့ရပါတယ်
 
 
 
