@@ -2,10 +2,10 @@
 
 - [Container](#container)
 -  [Padding](#padding)
--  [Margin](#margin)
+-  [Card](#card)
 - [Scaffold](#scaffold)
 - [Button(ImageButton, OutlineButton)](#buttonimagebutton-outlinebutton)
-- [MaterialApp](#materialapp) 
+- [TextFiled](#textfield) 
 - [Text](#text) 
 - [Image(Both Network and Asset)](#imageboth-network-and-asset) 
 - [Expanded](#expanded) 
@@ -52,13 +52,13 @@ Containerရဲ့ Decoration ကတော့ သူ့ရဲ့ နောက်
 
 ဘယ်လိုမျိုုးလဲဆိုတော့
 
-```
+```dart
 Container(
 	decoration:BoxDecoration(
 		border: Border.all(color: Colors.black, width: 4),  
-        borderRadius: BorderRadius.circular(8),  
-        boxShadow: [  
-              new BoxShadow(color: Colors.green, offset: new Offset(6.0, 6.0),),  
+    borderRadius: BorderRadius.circular(8),  
+    boxShadow: [  
+            new BoxShadow(color: Colors.green, 					offset: new Offset(6.0, 6.0),),  
         ],
 	),
 	child:Text("Hello world")
@@ -66,6 +66,10 @@ Container(
 ```
 
 BoxDecoration အကြောင်းသိချင်ရင်တော့ [ဒီမှာ](https://www.woolha.com/tutorials/flutter-using-boxdecoration-examples) ကြည့်လို့ရပါတယ်
+
+အကယ်၍မှ Container အကြောင်း အသေးစိတ်သိချင်သေးတယ်ဆိုရင်တော့ [ဒီမှာ](https://www.javatpoint.com/flutter-container) ဆက်လေ့လာလို့ရပါတယ်။
+
+ဆရာအနေနဲ့ လိုက်ပြပေးတာပိုကောင်းပါလိမ့်မယ်။ Lecture မှာ။
 
 
 
@@ -98,16 +102,21 @@ Padding(
 
 ပြီးတော့ တစ်ခုချင်းဆီဆို only နဲ့သုံးလို့ရတယ်
 
-```
+```dart
 Padding(
+	 padding: const EdgeInsets.only(
+      left: 40,
+      top: 20,
+      right: 40,
+      bottom: 20,
+    ),
+	child:Text("Hello world")
 )
 ```
 
 
 
-
-
-## Margin
+## Card
 
 Helo world
 
@@ -129,23 +138,107 @@ fkejfkejfkej
 
 ## Scaffold
 
-Helo world
+Flutter Scaffold ကို‌တော့ application ရဲ့ အခြေခံ layout လို့ပြောလို့ရပါတယ်။ Device Screen တစ်ခုလုံးကို ရယူနိုင်ထားပါတယ်။ သူ့ဆီကနေမှ သူ့နောက်မျိုးဆက် widget တွေဟာ UI လှလှနဲ့ ဆက်ပြီးအလုပ်လုပ်နိုင်နေတာဖြစ်ပါတယ်။
 
-gg
+သူ့ရဲ့ main သုံးတဲ့ လူသုံးအရမ်းများတဲ့ အရာတွေရှိပါတယ်။ ဒါတွေကတော့
 
-wee
+- AppBar
+- Body
+- Floating Action Button
+- Drawer
+- Bottom Navigation Bar
 
-jefkjek
+**AppBar **
 
-kejfkejf
+Appbar ကတော့ ဒီလိုပုံစံမျိုးဖြစ်တယ်။
 
-efkjekfj
+![Appbar](https://res.cloudinary.com/practicaldev/image/fetch/s--GEMZUPIX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/745oviezhc20albt7vtc.jpg)
 
-kfjekfjek
+ဒါမျိုးကိုဘယ်လိုရေးမလဲဆိုတော့ အောက်ကလိုရေးလို့ရတယ်။
 
-ekjfkejfkej
+```dart
+Widget build(BuildContext context)   
+{  
+  return Scaffold(  
+    appBar: AppBar(  
+      title: Text('First Flutter Application'),  
+    ), );  
+}  
+```
 
-fkejfkejfkej
+**Body**
+
+body ကတော့ appbar အောက်က အဖြူရောင်နေရာလေးပါ။ အဲမှာ widget တွေထပ်တိုးပြီးရေးလို့ရပါတယ်။
+
+```dart
+Widget build(BuildContext context) {   
+return Scaffold(   
+    appBar: AppBar(   
+    title: Text('First Flutter Application'),   
+    ),   
+    body: Center(   
+    child: Text("Welcome to Javatpoint",   
+        style: TextStyle( color: Colors.black, fontSize: 30.0,   
+        ),   
+         ),   
+    ),  
+}  
+```
+
+**Floating Action Button**
+
+ပုံတွေနဲ့ ပြတာပိုမြင်မယ်လို့ ယူဆတဲ့အတွက် ပြထားတာဖြစ်ပါတယ်
+
+![Floating action button](https://miro.medium.com/max/1580/1*8SWhPZtGxC1jSij4lGGHWQ.png)
+
+ဘယ်လိုရေးမလဲဆိုတာကတော့ အောက်မှာပြပေးထားပါတယ်။
+
+```dart
+Widget build(BuildContext context) {   
+  return Scaffold(   
+    appBar: AppBar(title: Text('First Flutter Application')),   
+    body: Center(   
+        child: Text("Welcome!!"),   
+    ),   
+    floatingActionButton: FloatingActionButton(   
+        elevation: 8.0,   
+        child: Icon(Icons.add),   
+        onPressed: (){   
+           print('I am Floating Action Button');  
+        }   
+    );   
+}  
+```
+
+**Drawer**
+
+သူကဘယ်လိုမျိုးလဲဆိုတော့ ဒီလိုမျိုုးလေး
+
+![Drawer](https://miro.medium.com/max/1440/1*GLtBR5juNDdlp0u2NAGv-g.png)
+
+ဘယ်လို ရေးမလဲဆိုရင် Scaffold ထဲက drawer(parameter) ရှိတယ်။ အဲမှာ ‌ရေးရမှာပေါ့နော်
+
+```dart
+Scaffold(
+	drawer:Drawer(
+    	child:Widgets()
+  	)
+)
+```
+
+
+
+**Bottom Navigation Bar**
+
+Bottom Navigation bar ကို ပုံပဲပြထားဦးမယ်။ နည်းနည်းခက်လို့ ရေးရမှာ
+
+![Bottom Navigation Bar](https://brainsandbeards.com/static/d189b48add3cbd63d126aafb3e81320d/d3ba7/bottom_nav.png)
+
+
+
+
+
+
 
 ## Button(ImageButton, OutlineButton)
 
@@ -167,7 +260,7 @@ ekjfkejfkej
 
 fkejfkejfkej
 
-## MaterialApp
+## TextField
 
 Helo world
 
