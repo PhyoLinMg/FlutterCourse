@@ -236,10 +236,6 @@ Bottom Navigation bar ကို ပုံပဲပြထားဦးမယ်
 
 
 
-
-
-
-
 ## Button(ImageButton, OutlineButton)
 
 Helo world
@@ -282,43 +278,124 @@ fkejfkejfkej
 
 ## Text
 
-Helo world
+Text ဆိုတဲ့ widget ကတော့ စာသားတွေကို ပြတဲ့နေရာမှာ သုံးတာပေါ့။ ဘယ်နေရာမှာပဲဖြစ်ဖြစ် စာကပြရတာကြီးပဲဆိုတော့ Text ကတော့ အရေးပါတဲ့ အရာပေါ့။
 
-gg
+အဲတော့ တစ်ချက်လောက်ဘယ်လိုသုံးတယ်ဆိုတာ ကြည့်ကြည့်ရအောင်။
 
-wee
+```dart
+Widget build(BuildContext context) {  
+    return Scaffold(  
+      appBar: AppBar(  
+          title:Text("Text Widget Example")  
+      ),  
+      body: Center(  
+          child:Text("Welcome to Javatpoint")  
+      ),  
+    );  
+}  
+```
 
-jefkjek
+Text မှာ ဘာတွေပါလဲဆိုတာကိုတစ်ချက် List ထုတ်ပြပါမယ်။
 
-kejfkejf
+အဲမှာတစ်ချက်ပြောချင်လာတာက Flutter က open-source ဖြစ်တယ်။ အဲတာမလို့ source code ကိုတတ်နိုင်သလောက်၀င်ဖတ်ကြည့်ပါ။ ပညာရတာပေါ့။
 
-efkjekfj
+အခုချိန်(စာရေးနေတဲ့အချိန် အရေးအခင်းဖြစ်နေတဲ့အချိန်ဆိုတော့ စာလည်းလုပ်ချင်စိတ်မရှိ စာဖတ်ဖို့နေရာ‌လေးတစ်ခုဖန်တီးပေးချင်လို့သာ ကြိုးစားရေးနေတာပါ) မှာ လုပ်ချင်စိတ်မရှိကြပါဘူး။
 
-kfjekfjek
+အဲတော့ ပြောချင်တာလည်း ရှည်သွားပြီဆိုတော့ ပြန်စကြရအောင်။
 
-ekjfkejfkej
+```dart
+const Text(String data,{  
+    Key key,  
+    TextStyle style,  
+    StrutStyle strutStyle,  
+    TextAlign textAlign,  
+    TextDirection textDirection,  
+    TextOverflow overflow,  
+    bool softWrap,  
+    double textScaleFactor,  
+    int maxLines,  
+    String semanticsLabel,  
+    TextWidthBasis textWidthBasis,  
+    TextHeightBehavior textHeightBehavior  
+    }  
+)  
+```
 
-fkejfkejfkej
+ ကျွန်တော် ဒီမှာ လူသုံးများတဲ့ အရာတွေဖြစ်တဲ့ Text Style,Text Align , TextDirection, maxLines, TextOverFlow တွေကို ပြောသွားရှင်းသွားမှာဖြစ်ပါတယ်။
+
+**Text Style**
+
+- background->Text ရဲ့ နောက်ခံအနေနဲ့ လုပ်ချင်တာရှိရင် ဒီဟာကို သုံးလို့ရတယ်။
+- fontWeight->Text ရဲ့ အထူကို သတ်မှတ်တာပါ။
+- fontSize->Text Font အရွယ်အစား ကိုချိန်ချင်ရင် သုံးတယ်
+- fontFamily->Text Font အမျိုးအစားတွေကို ပြောင်းချင်ရင်သုံးတယ်။လုပ်နည်း အပြည့်အစုံကို [ဒီမှာ](https://www.youtube.com/watch?v=fDRtpjHfOuw) ကြည့်နိုင်ပါတယ်။
+- fontStyle->Font ရဲ့ စတိုင်ပေါ့။ နမူနာအနေနဲ့ဆိုရင် (Bold, italic)
+- Color->Text ရဲ့ အရောင် ကိုပြောင်းချင်တဲ့အခါကျရင် သုံးရပါမယ်၊
+- letterSpacing->စာတစ်လုံးချင်းရဲ့ အကွာအ‌ေ၀းကို သတ်မှတ်ပေးတာပါ။
+- shadows->Text ရဲ့ နောက်မှာ shadow ထည့်တာပါ
+
+**Text Align**
+
+Text ကိုဘယ်နေရာမှာ ထားမလဲဆိုတာ ဒီလိုမျိုးပါ။
+
+```dart
+Text("text",textAlign:TextAlign.left)
+```
+
+**maxLines**
+
+Text widget မှာထည့်မယ့် String တစ်ခုဟာ အရမ်းရှည်နေပြီဆိုရင် ပြမဲ့ line limit ကို ကန့်သတ်လိုက်တာပေါ့့
+
+```dart
+Text("Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+optio, eaque rerum! Provident similique accusantium nemo autem", maxLines:2)
+```
+
+
+
+**TextOverFlow**
+
+အပေါ် ကလို maxLines ထည့်လိုက်ရင် ကျန်တဲ့ စာသားတွေကို ဘယ်လို ပြမလဲဆိုတဲ့မေးခွန်းက ၀င်လာမယ်။ အဲမေးခွန်းအတွက် ဒီ TextOverFlow ကဖြေရှင်းပေးထားတယ်။
+
+အဲမှာ အသုံးများတဲ့ အရာလေးတွေကို ပြထားပါမယ်။ [လက်တွေ့]()  ပြထားတာရှိရင် ပိုနားလည်ရလွယ်ပါလိမ့်မယ်။
+
+စာနဲ့လည်းရေးထားပါမယ်။clip, ellipsis , fade နဲ့ visible တို့ဖြစ်ပါတယ်။
+
+```DART
+Text("Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+optio, eaque rerum! Provident similique accusantium nemo autem", maxLines:2,overflow:TextOverflow.ellipsis,)
+```
+
+
 
 ## Image(Both Network and Asset)
 
-Helo world
+Image တွေကတော့ Photo တွေပြဖို့အတွက် သုံးတဲ့ widget ပဲဖြစ်ပါတယ်။ သူ့မှာ နှစ်မျိုးရှိပါတယ်။ AssetImage ဆိုတာ မိမိဖုန်းထဲမှာ ရှိနေတဲ့ ပုံ သို့ application မှာထည့်ထားတဲ့ ပုံတွေကို ပြဖို့သုံးတာဖြစ်ပါတယ်။ ရေးနည်းကိုလည်း အောက်မှာတစ်ခါတည်းရှင်းသွားပါမယ်။ ထည့်ပေးရမှာကတော့ ပြချင်တဲ့ ပုံရဲ့ ပတ်လမ်းကြောင်းကို ထည့်ပေးရမှာပါ။
 
-gg
+```dart
+```
 
-wee
 
-jefkjek
 
-kejfkejf
+ဆိုတာ အင်တာနက်မှာရှိတဲ့ ပုံတွေကိုပြမှာဖြစ်ပါတယ်။ လိုအပ်တာကတော့ အင်တာနက်မှာ ရှိတဲ့ image url ကို ထည့်ပေးရပါမယ်။ အင်တာနက်ကနေ ဆွဲပြရတာကြောင့် ပုံပေါ် ဖို့ ခဏတော့စောင့်ရပါလိမ့်မယ်။
 
-efkjekfj
+```dart
+```
 
-kfjekfjek
 
-ekjfkejfkej
 
-fkejfkejfkej
+ပြီး container နောက်မှာ decoration အနေနဲ့ image တွေထားပြလို့ရပါသေးတယ်။ အဲမှာတော့ တစ်ခါတည်း နှစ်ခုလုံးလုပ်ပြသွားပါမယ်။
+
+```DART
+```
+
+ 
+
+
 
 ## Expanded
 
