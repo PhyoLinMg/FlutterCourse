@@ -1,3 +1,5 @@
+
+
 ### Explaining Useful Widgets
 
 - [Container](#container)
@@ -376,24 +378,64 @@ optio, eaque rerum! Provident similique accusantium nemo autem", maxLines:2,over
 
 Image တွေကတော့ Photo တွေပြဖို့အတွက် သုံးတဲ့ widget ပဲဖြစ်ပါတယ်။ သူ့မှာ နှစ်မျိုးရှိပါတယ်။ AssetImage ဆိုတာ မိမိဖုန်းထဲမှာ ရှိနေတဲ့ ပုံ သို့ application မှာထည့်ထားတဲ့ ပုံတွေကို ပြဖို့သုံးတာဖြစ်ပါတယ်။ ရေးနည်းကိုလည်း အောက်မှာတစ်ခါတည်းရှင်းသွားပါမယ်။ ထည့်ပေးရမှာကတော့ ပြချင်တဲ့ ပုံရဲ့ ပတ်လမ်းကြောင်းကို ထည့်ပေးရမှာပါ။
 
+Image ကို Locally ပြချင်ရင်
+
+Folder structure assets-> images ကိုဆောက်, images အောက်မှာ ပုံတွေထည့့်
+
+pubsepc.yaml မှာ ဒီလိုလေးသွားရေးပေး
+
 ```dart
+flutter:
+   assets:
+     - assets/images/
 ```
 
-
-
-ဆိုတာ အင်တာနက်မှာရှိတဲ့ ပုံတွေကိုပြမှာဖြစ်ပါတယ်။ လိုအပ်တာကတော့ အင်တာနက်မှာ ရှိတဲ့ image url ကို ထည့်ပေးရပါမယ်။ အင်တာနက်ကနေ ဆွဲပြရတာကြောင့် ပုံပေါ် ဖို့ ခဏတော့စောင့်ရပါလိမ့်မယ်။
+ပြီးရင် ကျန်တာဆက်ရေးလို့ ရပြီ။
 
 ```dart
+Image.asset('assets/images/my_profile.png')
 ```
 
+Network Imageဆိုတာ အင်တာနက်မှာရှိတဲ့ ပုံတွေကိုပြမှာဖြစ်ပါတယ်။ လိုအပ်တာကတော့ အင်တာနက်မှာ ရှိတဲ့ image url ကို ထည့်ပေးရပါမယ်။ အင်တာနက်ကနေ ဆွဲပြရတာကြောင့် ပုံပေါ် ဖို့ ခဏတော့စောင့်ရပါလိမ့်မယ်။
 
+ရေးရင်တော့ ဒီလိုရေးရပါလိမ့်မယ်။
+
+```dart
+Image.network("https://static.wikia.nocookie.net/haikyuu/images/a/a4/Haikyu_S4.jpg/revision/latest?cb=20200111012854")
+```
 
 ပြီး container နောက်မှာ decoration အနေနဲ့ image တွေထားပြလို့ရပါသေးတယ်။ အဲမှာတော့ တစ်ခါတည်း နှစ်ခုလုံးလုပ်ပြသွားပါမယ်။
 
+ဒီတစ်ခုက AssetImage အတွက်ပါ။
+
 ```DART
+Container(
+	height: 120.0,
+    width: 120.0,
+    decoration: BoxDecoration(
+      	image: DecorationImage(
+          image: AssetImage(
+              'assets/images/my_profile.png'),
+        ),
+      ),
+)
 ```
 
- 
+ ဒီတစ်ခုကတော့ NetworkImage အတွက်ပါ။
+
+```dart
+Container(
+	height: 120.0,
+    width: 120.0,
+    decoration: BoxDecoration(
+      	image: DecorationImage(
+          image: NetworkImage( "https://static.wikia.nocookie.net/haikyuu/images/a/a4/Haikyu_S4.jpg/revision/latest?cb=20200111012854"),
+        ),
+      ),
+)
+```
+
+
 
 
 
