@@ -6,7 +6,7 @@
 -  [Padding](#padding)
 -  [Card](#card)
 - [Scaffold](#scaffold)
-- [Button(ImageButton, OutlineButton)](#buttonimagebutton-outlinebutton)
+- [Button](#button)
 - [TextFiled](#textfield) 
 - [Text](#text) 
 - [Image(Both Network and Asset)](#imageboth-network-and-asset) 
@@ -238,25 +238,93 @@ Bottom Navigation bar ကို ပုံပဲပြထားဦးမယ်
 
 
 
-## Button(ImageButton, OutlineButton)
+## Button
 
-Helo world
+Flutter မှာ Button ခလုတ်တွေအများကြီးရှိပါတယ်
 
-gg
+- Flat Button
+- Raised Button
+- Floating Button
+- Drop Down Button
+- Icon Button
+- Outline Button
+- PopupMenu Button
 
-wee
+**Flat Button**
 
-jefkjek
+Text Label ပဲပါတဲ့ Button တစ်ခုဖြစ်တယ်။ ဘာမှ Decoration လောက်လောက်လားလား မပါပဲနဲ့ Elevation ခေါ်တဲ့ ‌ဖောင်းကြွ လည်းမပါဘူး။ 
 
-kejfkejf
+```dart
+FlatButton(  
+     child: Text('SignUp', style: TextStyle(fontSize: 20.0),),  
+     onPressed: () {},  
+)
+```
 
-efkjekfj
+Result ကတော့
 
-kfjekfjek
+![Flat Button Example](https://static.javatpoint.com/tutorial/flutter/images/flutter-buttons.png)
 
-ekjfkejfkej
 
-fkejfkejfkej
+
+
+
+**Raised Button**
+
+ဒါကတော့ Material Widget ပေါ်မှာ အခြေခံထားတဲ့ Flat Button နဲ့ ဆင်တူတဲ့ Button တစ်ခုဖြစ်တယ်။ ဒါပေမဲ့ မတူတာတစ်ချက် က Elevation ခေါ်တဲ့ ဖောင်းကြွ ပါလာတယ်။ ပြီးတော့ attribute တွေလည်းပိုပါလာတယ်။Flat Button ထက်စာရင်။
+
+ထူးခြားတာက onPressed() အပြင် onLongPress() ဆိုတဲ့ ခလုတ်နှိပ်တဲ့အခါ ခေါ်တဲ့ method 
+
+```dart
+
+```
+
+
+
+![Raised Button Example]()
+
+**Drop Down Button**
+
+```dart
+
+```
+
+![Drop Down Button](https://static.javatpoint.com/tutorial/flutter/images/flutter-buttons6.png)
+
+![Drop Down Button Selecting](https://static.javatpoint.com/tutorial/flutter/images/flutter-buttons7.png)
+
+**Icon Button**
+
+```dart
+
+```
+
+![Icon Button](https://static.javatpoint.com/tutorial/flutter/images/flutter-buttons8.png)
+
+**Popup Menu Button**
+
+```dart
+
+```
+
+![Popup Menu Button](https://static.javatpoint.com/tutorial/flutter/images/flutter-buttons10.png)
+
+![Popup Menu Button Selecting](https://static.javatpoint.com/tutorial/flutter/images/flutter-buttons11.png)
+
+**Outline Button**
+
+```dart
+```
+
+![Outline Button](https://static.javatpoint.com/tutorial/flutter/images/flutter-buttons12.png)
+
+
+
+အပြည့်အစုံ ကို [ဒီမှာ](https://www.javatpoint.com/flutter-buttons) ကြည့်လို့ရပါတယ်။
+
+
+
+
 
 ## TextField
 
@@ -481,23 +549,17 @@ fkejfkejfkej
 
 ## ListView/GridView
 
-Helo world
+ListView , GridView တွေဟာ ကျွန်တော်တို့ပြစရာ အရှည်ကြီး ရှိတဲ့ ဟာတွေ ပြချင်ရင် သုံးပါတယ်။
 
-gg
+TIP::ကျွန်တော်ကတော့ သူတို့ရဲ့ လုပ်ပုံ လုပ်နည်းလေးတွေသိချင်လို့ရင် Flutter Widget of the week ကဟာတွေကြည့်ဖြစ်တယ်။ Listview နဲ့ GridView အကြောင်းလေးတွေ ကြည့်ကြည့်ပါ။
 
-wee
 
-jefkjek
 
-kejfkejf
 
-efkjekfj
 
-kfjekfjek
 
-ekjfkejfkej
 
-fkejfkejfkej
+
 
 ## SingleChildScrollView
 
