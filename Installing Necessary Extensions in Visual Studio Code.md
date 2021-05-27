@@ -6,5 +6,5 @@
 
 အပြည့်အစုံ လုပ်သမျှကို ကိုယ်တိုင်ကြည့်ချင်ရင် ဒီမှာ ကြည့်လို့ရပါတယ်။
 
-<iframe width="560" height="560" src="https://www.youtube.com/embed/VHhksMa2Ffg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Extensions for VS code](http://img.youtube.com/vi/VHhksMa2Ffg/0.jpg)](http://www.youtube.com/watch?v=VHhksMa2Ffg)
 
