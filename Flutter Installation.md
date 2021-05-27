@@ -4,6 +4,8 @@
 
 <iframe width="560" height="560" src="https://www.youtube.com/embed/u6Uy4yPQZlg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<div>   <iframe id="inlineFrameExample"       title="Inline Frame Example"       width="300"       height="200"       src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik">   </iframe> </div>
+
 **Flutter Installation in Mac Part 1 and 2 By Angela Yu** 
 
 <iframe width="560" height="560" src="https://www.youtube.com/embed/hL7pkX1Pfko" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
