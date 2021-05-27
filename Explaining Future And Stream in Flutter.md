@@ -82,7 +82,7 @@ Future codelab အပြည့်အစုံကို [ဒီမှာ](https:/
 
 Stream ဆိုတာ နားလည်အောင် ရှင်းပြရရင် ပုံလေးထည့် ထားလိုက်ပါမယ်။
 
-![Explanation of Stream From Youtube](C:\Users\LinMaung\FlutterCourse\Images\explanation_of_stream.png)
+![Explanation of Stream From Youtube](https://github.com/PhyoLinMg/FlutterCourse/blob/main/Images/explanation_of_stream.png)
 
 ပုံကတော့ [ဒီက](https://www.youtube.com/watch?v=toPtm6eyyeE&list=PLptHs0ZDJKt_T-oNj_6Q98v-tBnVf-S_o&index=3&t=90s) ယူထားတာပေါ့။ သူကတော့ BLOC အကြောင်းမှာ Stream ကိုထည့်ရှင်းထားတာ သဘောကျလို့ယူထားတာပါ။ ကြည့်ချင်ရင် တော့ ကျန်တာကိုမကြည့်ပဲ Stream ကိုရှင်းတာပဲကြည့်ပါ။
 
