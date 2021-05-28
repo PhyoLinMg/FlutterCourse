@@ -43,7 +43,7 @@ list.forEach((item){
 
 
 
- ## Tip for Language Conversion
+ ## Tips for Language Conversion
 
 တတ်နိုင်ရင် မမှတ်ထားပါနဲ့ syntax တွေလိုက်မှတ်ထားနေရင် ခေါင်းအရမ်းလေးပါလိမ့်မယ်။ ပြီးတော့ ကျွန်တော်ကိုယ်တိုင်လည်း စမ်းကြည့်ပြီးသားမလို့ပါ။
 

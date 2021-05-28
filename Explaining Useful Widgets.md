@@ -273,20 +273,103 @@ Result ကတော့
 
 ဒါကတော့ Material Widget ပေါ်မှာ အခြေခံထားတဲ့ Flat Button နဲ့ ဆင်တူတဲ့ Button တစ်ခုဖြစ်တယ်။ ဒါပေမဲ့ မတူတာတစ်ချက် က Elevation ခေါ်တဲ့ ဖောင်းကြွ ပါလာတယ်။ ပြီးတော့ attribute တွေလည်းပိုပါလာတယ်။Flat Button ထက်စာရင်။
 
-ထူးခြားတာက onPressed() အပြင် onLongPress() ဆိုတဲ့ ခလုတ်နှိပ်တဲ့အခါ ခေါ်တဲ့ method 
+ထူးခြားတာက onPressed() အပြင် onLongPress() ဆိုတဲ့ ခလုတ်နှိပ်တဲ့အခါ ခေါ်တဲ့ method  တွေထပ်တိုးလာတာပဲဖြစ်တယ်။
 
 ```dart
-
+RaisedButton(  
+       child: Text("Click Here",style:TextStyle(fontSize:20),),  
+       onPressed: (){},  
+       color: Colors.red,  
+       textColor: Colors.yellow,  
+       padding: EdgeInsets.all(8.0),  
+       splashColor: Colors.grey,  
+)  
 ```
 
 
 
-![Raised Button Example]()
+![Raised Button Example](https://static.javatpoint.com/tutorial/flutter/images/flutter-buttons2.png)
 
 **Drop Down Button**
 
-```dart
+Option တွေ ရှိကြတယ်။ အဲထဲက တစ်ခုကို ရွေးချင်တဲ့ ပုံစံမျိုးလုပ်ချင်တဲ့ အချိန်ကျ DropDown Button ကိုသုံးလို့ရတယ်ပေါ့။
 
+```dart
+class MyApp extends StatefulWidget {  
+  @override  
+  _MyAppState createState() => _MyAppState();  
+}  
+  
+class _MyAppState extends State<MyApp> {  
+  List<ListItem> _dropdownItems = [  
+    ListItem(1, "GeeksforGeeks"),  
+    ListItem(2, "Javatpoint"),  
+    ListItem(3, "tutorialandexample"),  
+    ListItem(4, "guru99")  
+  ];  
+  
+  List<DropdownMenuItem<ListItem>> _dropdownMenuItems;  
+  ListItem _itemSelected;  
+  
+  void initState() {  
+    super.initState();  
+    _dropdownMenuItems = buildDropDownMenuItems(_dropdownItems);  
+    _itemSelected = _dropdownMenuItems[1].value;  
+  }  
+  
+  List<DropdownMenuItem<ListItem>> buildDropDownMenuItems(List listItems) {  
+    List<DropdownMenuItem<ListItem>> items = List();  
+    for (ListItem listItem in listItems) {  
+      items.add(  
+        DropdownMenuItem(  
+          child: Text(listItem.name),  
+          value: listItem,  
+        ),  
+      );  
+    }  
+    return items;  
+  }  
+  
+  @override  
+  Widget build(BuildContext context) {  
+    return Scaffold(  
+      appBar: AppBar(  
+        title: Text("DropDown Button Example"),  
+      ),  
+      body: Column(  
+        children: <Widget>[  
+          Padding(  
+            padding: const EdgeInsets.all(10.0),  
+            child: Container(  
+              padding: const EdgeInsets.all(5.0),  
+              decoration: BoxDecoration(  
+                  color: Colors.greenAccent,  
+                  border: Border.all()),  
+              child: DropdownButtonHideUnderline(  
+                child: DropdownButton(  
+                    value: _itemSelected,  
+                    items: _dropdownMenuItems,  
+                    onChanged: (value) {  
+                      setState(() {  
+                        _itemSelected = value;  
+                      });  
+                    }),  
+              ),  
+            ),  
+          ),  
+          Text("We have selected ${_itemSelected.name}"),  
+        ],  
+      ),  
+    );  
+  }  
+}  
+  
+class ListItem {  
+  int value;  
+  String name;  
+  
+  ListItem(this.value, this.name);  
+}  
 ```
 
 ![Drop Down Button](https://static.javatpoint.com/tutorial/flutter/images/flutter-buttons6.png)
@@ -295,17 +378,51 @@ Result ကတော့
 
 **Icon Button**
 
-```dart
+ရှင်းရှင်းပြောရင် Icon ကိုနောက်ခံထားထားတဲ့ button ပါပဲ။
 
+```dart
+IconButton(  
+    icon: Icon(Icons.volume_up),  
+    iconSize: 50,  
+    color: Colors.brown,  
+	tooltip: 'Increase volume by 5',  
+	onPressed: () {   
+    },  
+),  
 ```
 
 ![Icon Button](https://static.javatpoint.com/tutorial/flutter/images/flutter-buttons8.png)
 
 **Popup Menu Button**
 
-```dart
+Menu Button လေးတွေ တွေ့ဖူးကြမယ်ထင်ပါတယ်။
 
+(အမှန်က နာမည်ပါပါနေတာကို ဘယ်လိုပြော ရတော့မှန်းမသိတော့လို့)
+
+```dart
+const List<Choice> choices = const <Choice>[  
+  const Choice(name: 'Wi-Fi', icon: Icons.wifi),  
+  const Choice(name: 'Bluetooth', icon: Icons.bluetooth),  
+  const Choice(name: 'Battery', icon: Icons.battery_alert),  
+  const Choice(name: 'Storage', icon: Icons.storage),  
+];  
 ```
+
+```dart
+PopupMenuButton<Choice>(  
+    onSelected: _select,  
+    itemBuilder: (BuildContext context) {  
+        return choices.skip(0).map((Choice choice) {  
+        	 return PopupMenuItem<Choice>(  
+                    value: choice,  
+                    child: Text(choice.name),  
+             );  
+        }).toList();  
+    },  
+)
+```
+
+
 
 ![Popup Menu Button](https://static.javatpoint.com/tutorial/flutter/images/flutter-buttons10.png)
 
@@ -313,16 +430,23 @@ Result ကတော့
 
 **Outline Button**
 
+Outline Button ကတော့ ဘောင်ပဲပါပြီး အတွင်းသား က transparent ဖြစ်တဲ့ Button ပေါ့ဗျာ။
+
 ```dart
+OutlineButton(  
+	child: Text("Outline Button", style:TextStyle(fontSize:20.0),),  
+	highlightedBorderColor: Colors.red,  
+	shape: RoundedRectangleBorder(  
+		borderRadius: BorderRadius.circular(15)),  
+	onPressed: () {},  
+),  
 ```
 
 ![Outline Button](https://static.javatpoint.com/tutorial/flutter/images/flutter-buttons12.png)
 
 
 
-အပြည့်အစုံ ကို [ဒီမှာ](https://www.javatpoint.com/flutter-buttons) ကြည့်လို့ရပါတယ်။
-
-
+ကျန်နေတဲ့ Button အပြည့်အစုံ ကို [ဒီမှာ](https://www.javatpoint.com/flutter-buttons) ကြည့်လို့ရပါတယ်။
 
 
 

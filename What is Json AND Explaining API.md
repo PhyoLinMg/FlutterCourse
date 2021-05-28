@@ -50,8 +50,43 @@ Json ရဲ့ အစမှာ တွန့်ကွင်း("{") တွေဟ�
     "id": 4,
     "title": "eum et est occaecati",
     "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
-  },
+  }
 ]
 ```
 
-ဒီအပေါ် မှာပြထားတဲ့ example တစ်ခုက Model တစ်ခုကို ကိုယ်စားပြုပါတယ်
+ဒီအပေါ် မှာပြထားတဲ့ example တစ်ခုက Model တစ်ခုကို ကိုယ်စားပြုပါတယ်။
+
+မျက်လုံးထဲနည်းနည်းမြင်သွားအောင် ဒီလိုလေး လုပ်ကြရအောင်။
+
+[ဒီကို](https://javiercbk.github.io/json_to_dart/) သွားပြီး အ‌ပေါ်က json ကိုကူးပြီးသွားထည့်ကြည့်ပါ။
+
+ရလာတဲ့ result က ဒီလိုလေး ပြနေပါလိမ့်မယ်။
+
+```dart
+class Post {
+  int userId;
+  int id;
+  String title;
+  String body;
+
+  Post({this.userId, this.id, this.title, this.body});
+
+  Post.fromJson(Map<String, dynamic> json) {
+    userId = json['userId'];
+    id = json['id'];
+    title = json['title'];
+    body = json['body'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['userId'] = this.userId;
+    data['id'] = this.id;
+    data['title'] = this.title;
+    data['body'] = this.body;
+    return data;
+  }
+}
+```
+
+
