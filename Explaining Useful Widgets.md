@@ -677,11 +677,74 @@ ListView , GridView တွေဟာ ကျွန်တော်တို့ပ�
 
 TIP::ကျွန်တော်ကတော့ သူတို့ရဲ့ လုပ်ပုံ လုပ်နည်းလေးတွေသိချင်လို့ရင် Flutter Widget of the week ကဟာတွေကြည့်ဖြစ်တယ်။ Listview နဲ့ GridView အကြောင်းလေးတွေ ကြည့်ကြည့်ပါ။
 
+ListView type သုံးမျိုး ရှိပါတယ်။ ဒါတွေကတော့
+
+- Original ListView
+- ListView.builder
+- ListView.separated
+
+#### Original ListView
+
+children widget နှစ်ခု သုံးခု အနည်းပဲ ရှိတဲ့ အချိန်ကျ‌ရင်တော့ သုံးပါတယ်။
+
+ဥပမာ ကတော့ ဒီမှာပါ။
+
+```dart
+ListView(
+	children:<Widget>[
+      ItemOne(),
+      ItemTwo(),
+      ItemThree(),
+    ],
+)
+```
+
+#### ListView.builder()
+
+builder() constructor က ထပ်ခါ ထပ်ခါပြရမယ့် items တွေကို ဆောက်ပေးသွားတာဖြစ်တယ်။
+
+သူက parameters နှစ်ခုကို အဓိက ယူတယ်။ itemCount(အဲဒါသည် ပြမယ့် list အရေအတွက်) နဲ့ itemBuilder( list item တစ်ခုချင်းစီကို ဘယ်လို ဆောက်မလဲဆိုတာပေ့ါ)။
 
 
 
+User Screen မှာရှိတဲ့ screen size အပေါ် မူတည်ပြီး List Item Number အရေအတွက်တည်ဆောက်တယ်။ scroll လိုက်တာနဲ့ အပေါ်ရောက် သွားတဲ့ item တွေဟာ ဖျက်ပလိုက်တယ်။
 
+အဲတော့ memory အစားသက်သာတယ်။ Performance ကောင်းတယ်လို့ မြင်သာတာပေါ့။
 
+အဲတာကို **construct lazily** လို့ ခေါ်တယ်။
+
+```dart
+ListView.builder(
+  itemCount: itemCount,
+  itemBuilder: (context, position) {
+    return listItem();
+  },
+),
+```
+
+#### ListView.separated()
+
+Listview separate က အရှင်းဆုံးပြောရရင် List နှစ်ခုပေါင်း ဆောက်ထားတာပဲ။ ပထမက ကျွန်တော်တို့ တကယ်ပြချင်တဲ့ List, ဒုတိယတစ်ခုက List Item တစ်ခုချင်းဆီမှာ ခြားမယ့် List တစ်ခုပေါ့။
+
+**itemCount ကျိန်းသေလိုပါတယ်**
+
+TIP:: အခုပြောတဲ့ Listview ကို ကျွန်တော်တို့တွေ main list တွေကြားမှာ advertisement တွေကို ထည့်မယ်ဆိုရင်ကောင်းကောင်းသုံးလို့ရတယ်။ ပုံကြမ်းလေးပြထားပေးမယ်။
+
+![ListView Ad](https://miro.medium.com/max/875/1*e6LEilKRr0p62g7VNat3Bw.png)
+
+```dart
+ListView.separated(
+      itemBuilder: (context, position) {
+        return ListItem();
+      },
+      separatorBuilder: (context, position) {
+        return SeparatorItem();
+      },
+      itemCount: itemCount,
+),
+```
+
+Listview အကြောင်း ဆက်လေ့လာမယ်ဆိုရင်တော့ [ဒီမှာ](https://medium.com/flutter-community/flutter-listview-and-scrollphysics-a-detailed-look-7f0912df2754) ဆက်ဖတ်ကြည့်လို့ရပါတယ်။
 
 
 

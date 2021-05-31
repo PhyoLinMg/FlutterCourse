@@ -50,6 +50,12 @@ Json ရဲ့ အစမှာ တွန့်ကွင်း("{") တွေဟ�
     "id": 4,
     "title": "eum et est occaecati",
     "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
+  },
+  {
+    "userId": 1,
+    "id": 5,
+    "title": "nesciunt quas odio",
+    "body": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
   }
 ]
 ```
@@ -89,4 +95,143 @@ class Post {
 }
 ```
 
+#### Network Layer
 
+အခုဆိုရင် ကျွန်တော်တို့ က အင်တာနက်ကနေပဲ အလုပ်အများဆုံး လုပ်ကြတယ်။ မပါမဖြစ် လည်း အရေးကြီးတဲ့ အတွက် ကျွန်တော်တို့ ဒီမှာ ထည့်သင်ပါမယ်။
+
+ကျွန်တော်တို့ API Architecture မှာ အသုံးများတဲ့ အရာတွေကို ပြောသွားမယ်။
+
+- REST API
+- SOAP
+- GraphQL
+
+ကျွန်တော် တို့ အခုသုံးမှာသည် REST API ကိုပဲသုံးသွားမှာ ဖြစ်တယ်။
+
+HTTP မှာ Response Status code တွေ ရှိပါတယ်။ 
+
+1. Informational responses (100–199)
+2.  Successful responses (200–299) 
+3. Redirects (300–399) 
+4. Client errors (400–499) 
+5. Server errors (500–599)
+
+အဲမှာ အသုံးများတဲ့ အရာတွေကို ပြောသွားပါမယ်။
+
+
+
+Successful responses    
+
+a. **200** OK    
+
+b. **201** Created  
+
+c. **202** Accepted    
+
+d. **203** Non-Authoritative Information    
+
+e. **204** No Content    
+
+f. **205** Reset Content    
+
+g. **206** Partial Content  
+
+
+
+Client error responses    
+
+a. **400** Bad Request    
+
+b. **401** Unauthorized    
+
+c. **402** Payment Required     
+
+d. **403** Forbidden   
+
+ e. **404** Not Found    
+
+f. **405** Method Not Allowed    
+
+g. **406** Not Acceptable    
+
+h. **407** Proxy Authentication Required    
+
+i. **408** Request Timeout 
+
+j. **409** Conflict 
+
+k. **410** Gone    
+
+l. **411** Length Required    
+
+m. **412** Precondition Failed    
+
+n. **413** Payload Too Large    
+
+o. **414** URI Too Long
+
+
+
+Server error responses    
+
+a. **500** Internal Server Error    
+
+b. **501** Not Implemented    
+
+c. **502** Bad Gateway    
+
+d. **503** Service Unavailable    
+
+e. **504** Gateway Timeout    
+
+f. **505** HTTP Version Not Supported    
+
+g. **506** Variant Also Negotiates    
+
+h. **507** Insufficient Storage (WebDAV)    
+
+i. **508** Loop Detected (WebDAV)    
+
+j. **510** Not Extended    
+
+k. **511** Network Authentication Required
+
+  
+
+အဲတော့ကျွန်တော်တို့ REST API  Method တွေ အကြောင်း နည်းနည်း ရှင်းပြပါမယ်။ 
+
+- GET
+- POST
+- PUT
+- DELETE
+- PATCH
+
+###### GET
+
+GET ကတော့ information only ကို ဆွဲချင်ရင် သုံးပါတယ်။ဒါပေမဲ့  ပြုပြင်လို့မရနိုင်ပါဘူး။
+
+သူက အခြား method က ‌ဒေတာတွေကို မပြင်သေးသရွေ့ ကြိုက်တဲ့အချိန် ကြိုက်သလိုခေါ် ဘယ်တော့မှ မပြောင်းလဲဘူး။
+
+အကုန်အဆင်ပြေတယ်ဆို Status Code 200 ကို ပြပါတယ်။
+
+အဆင်မပြေဘူး ဒီ endpoint ကို ရှာလို့မရဘူးဆိုရင် Status Code 404 ကို ပြပါတယ်။
+
+```http
+HTTP GET http://www.appdomain.com/users
+HTTP GET http://www.appdomain.com/users?size=20&page=5
+HTTP GET http://www.appdomain.com/users/123
+HTTP GET http://www.appdomain.com/users/123/address
+```
+
+###### POST
+
+
+
+###### PUT
+
+
+
+###### DELETE
+
+
+
+###### PATCH
