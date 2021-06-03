@@ -7,7 +7,7 @@
 -  [Card](#card)
 - [Scaffold](#scaffold)
 - [Button](#button)
-- [TextFiled](#textfield) 
+- [TextField](#textfield) 
 - [Text](#text) 
 - [Image(Both Network and Asset)](#imageboth-network-and-asset) 
 - [Expanded](#expanded) 
@@ -120,23 +120,25 @@ Padding(
 
 ## Card
 
-Helo world
 
-gg
 
-wee
 
-jefkjek
 
-kejfkejf
 
-efkjekfj
 
-kfjekfjek
 
-ekjfkejfkej
 
-fkejfkejfkej
+
+
+
+
+
+
+
+
+
+
+
 
 ## Scaffold
 
@@ -653,23 +655,81 @@ fkejfkejfkej
 
 ## Rows and Columns
 
-Helo world
+ကျွန်တော်တို့ ဒီကောင်က အရေးကြီးတဲ့ အထဲမှာ ပါပါတယ်။ကျွန်တော်တို့ အသုံးအရမ်းများမယ့် widget နှစ်ခုလည်းဖြစ်ပါတယ်။
 
-gg
+> Row နဲ့ Column ဟာ ကျွန်တော်တို့ ထည့် ချင်တဲ့ widget တွေကို Horizontally(in Row) နဲ့ Vertically(in Column) ပြင်ဆင်ပေးနိုင်တယ်။ Properties တွေကလည်း ဆင်တူတဲ့အတွက် တစ်ခါတည်းအတူတူ သင်ကြ ပြောကြတာဖြစ်ပါတယ်။
 
-wee
+Row နဲ့ Column ထဲက child widget တွေကို align လုပ်တဲ့အချိန်မှာ တူနေတဲ့ attribute တွေကို ရှေ့မှာထုတ်ပြီးပြောလိုက်ပါတယ်။
 
-jefkjek
+* start(children တွေကို main axis အစမှာ ထားချင်ရင်သုံး)
 
-kejfkejf
+* end(children တွေကို main axis အဆုံးမှာ ထားချင်ရင်သုံး)
 
-efkjekfj
+* center(children တွေကို main axis အလယ်မှာထားချင်ရင်သုံး )
 
-kfjekfjek
+* spaceBetween(children တွေကို ညီညီမျှမျှ နေရာလွတ်ခြားထားပေးချင်ရင်သုံး ဒါပေမဲ့ အစဘေးနဲ့ အဆုံးဘေးတွေမှာ နေရာလွတ်မရှိဘူး)
 
-ekjfkejfkej
+   ![Explaination of spaceBetween](..\Images\row_spacebetween.png)
 
-fkejfkejfkej
+* spaceAround(children တွေရဲ့ အစ‌ဘေးနဲ့ အဆုံးဘေးတွေမှာ space တွေရှိတယ်။ အဲ space တွေက အလယ်က space တွေရဲ့ တစ်၀က်ဆီရှိတယ်။ )
+
+  ![Explaination of Row SpaceAround](..\Images\row_spacearound.png)
+
+* spaceEvenly(children တွေဘေးမှာ အကုန်နေရာလွတ်တွေတူ)
+
+  ![Explaination of Row SpaceEvenly](..\Images\row_ spaceEvenly.png)
+
+### Row
+
+Row ရဲ့ main Axis နဲ့ cross Axis ကိုပြထားပေးတာပါ။
+
+![Explaining Row Alignments](https://static.javatpoint.com/tutorial/flutter/images/flutter-row-and-column.png)
+
+
+
+```dart
+Row(
+	mainAxisAlignment: MainAxisAlignment.start,
+    children:[
+        BlueBox(),
+		BlueBox(),
+		BlueBox(),
+    ]
+)
+```
+
+Output
+
+![Example row start code](../Images/row_start.png)
+
+### Column
+
+
+
+
+
+Column ရဲ့ main Axis နဲ့ cross Axis ကိုပြထားပေးတာပါ။
+
+![Explaining Column Alignment](https://static.javatpoint.com/tutorial/flutter/images/flutter-row-and-column3.png)
+
+
+
+```dart
+Row(
+	mainAxisAlignment: MainAxisAlignment.start,
+    children:[
+        BlueBox(),
+		BlueBox(),
+		BlueBox(),
+    ]
+)
+```
+
+Output
+
+![Explaining Column Start](../Images/column_start.png)
+
+
 
 ## ListView/GridView
 
@@ -744,7 +804,120 @@ ListView.separated(
 ),
 ```
 
-Listview အကြောင်း ဆက်လေ့လာမယ်ဆိုရင်တော့ [ဒီမှာ](https://medium.com/flutter-community/flutter-listview-and-scrollphysics-a-detailed-look-7f0912df2754) ဆက်ဖတ်ကြည့်လို့ရပါတယ်။
+**Listview** အကြောင်း ဆက်လေ့လာမယ်ဆိုရင်တော့ [ဒီမှာ](https://medium.com/flutter-community/flutter-listview-and-scrollphysics-a-detailed-look-7f0912df2754) ဆက်ဖတ်ကြည့်လို့ရပါတယ်။
+
+ဆိုတော့ **GridView** အကြောင်း ထပ်ဆက်ပါမယ်။
+
+ဒီကောင်ကကျ မျက်လုံးထဲမြင်အောင်ပြရရင် ဒီလိုမျိုးဖြစ်တယ်။
+
+![Flutter GridView Example](https://www.codesansar.com/storage/app/media/flutter/beautiful-grid-layout-using-gridview-flutter.png)
+
+
+
+အဲလိုလေးဖြစ်တယ်။
+
+သူ့မှာ ‌ရေးလို့ရတဲ့ Grid လေးမျိုးလောက်ရှိတယ်။ ဒါတွေကတော့
+
+- GridView.count()
+- GridView.builder()
+- GridView.custom()
+- GridView.extent()
+
+ကျွန်တော်ကတော့ အဓိကအနေနဲ့ အပေါ်က နှစ်မျိုးကိုပဲ ပြောသွားမှာဖြစ်ပါတယ်။
+
+ကျန်တာအနေနဲ့ကတော့ ကိုယ့်ဟာကိုယ်ဖတ်စေချင်တဲ့ အတွက် [Link](https://stackoverflow.com/questions/65939515/what-is-the-difference-between-the-grideview-custom-grideview-extent-widget-la)ပဲချသွားပေးမှာဖြစ်ပါတယ်။
+
+### GridView.count()
+
+သူ့ကိုတော့ grid အရေအတွက် သိပြီးသားနေရာတွေမှာဆို သုံးလို့ရပါတယ်။ သူ့ထဲမှာ ဘာ attribute တွေပါလည်းဆိုတော့
+
+* crossAxisCount(column အရေအတွက်ကို သတ်မှတ်တာဖြစ်ပါတယ်)
+
+* crossAxisSpacing(cross axis ကြားက အကွာအ‌ဝေးကို ပြောတာဖြစ်ပါတယ်)
+
+* mainAxisSpacing(main axis ကြားက အကွာအ‌ဝေးကို ပြောတာဖြစ်ပါတယ်)
+
+* scrollDirection(scroll သွားရမယ့်direction ကိုသတ်မှတ်ပေးတာဖြစ်ပါတယ်  i.e :horizontal or vertical)
+
+* reverse(think of UNO reverse ပြောင်းပြန်ပြန်ပြပေးတာပေါ့)
+
+  မျက်လုံးထဲမြင်သာအောင် ပုံလေးပြထားပေးပါမယ်။
+
+  ![Flutter Grid Explanation](https://image-static.segmentfault.com/424/249/4242498423-5d2af192af4d6_articlex)
+
+Example code ရေးပြရမယ်ဆိုရင်တော့ဖြင့်
+
+```dart
+GridView.count(  
+	crossAxisCount: 3,  
+	crossAxisSpacing: 4.0,  
+	mainAxisSpacing: 8.0,  
+    children: List.generate(choices.length, (index) {  
+		return Center(  
+			child: SelectCard(choice: choices[index]),  
+		);  
+	}  
+)  
+```
+
+Output ကတော့ ဒီလိုလေးပါ။ 
+
+![GridView Count Example](https://static.javatpoint.com/tutorial/flutter/images/flutter-gridview.png)
+
+
+
+### GridView.builder()
+
+ဒီကောင်ကတော့ ဘယ်လိုသုံးလဲဆိုတော့ ကျွန်တော်တို့ List ရဲ့ အရေအတွက် ကို မသိရတဲ့ အခါ ဒီကောင့်ကို သုံးလို့ရပါတယ်။
+
+Common Attribute တွေကတော့
+
+- itemCount(အရေအတွက်သတ်မှတ်ပေးရ)
+- gridDelegate(SliverGridDelegateWithFixedCrossAxisCount နဲ့ SliverGridDelegateWithMaxCrossAxisExtent ဆိုပြီး ရှိကြတယ်။ ဒါတွေကို grid တွေသတ်မှတ်ဖို့ သုံးကြတယ်)
+- itemBuilder(ပြမယ့် အရာတွေကို တည်ဆောက်ဖို့ အတွက် သုံးရတယ်)
+
+```dart
+class MyApp extends StatelessWidget {  
+  
+  List<String> images = [  
+    "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png",  
+    "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png",  
+    "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png",  
+    "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png"  
+  ];  
+  
+  @override  
+  Widget build(BuildContext context) {  
+    return MaterialApp(  
+      home: Scaffold(  
+        appBar: AppBar(  
+          title: Text("Flutter GridView Demo"),  
+          backgroundColor: Colors.red,  
+        ),  
+        body: Container(  
+            padding: EdgeInsets.all(12.0),  
+            child: GridView.builder(  
+              itemCount: images.length,  
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(  
+                  crossAxisCount: 2,  
+                  crossAxisSpacing: 4.0,  
+                  mainAxisSpacing: 4.0  
+              ),  
+              itemBuilder: (BuildContext context, int index){  
+                return Image.network(images[index]);  
+              },  
+            )),  
+      ),  
+    );  
+  }  
+}  
+```
+
+The Output will be
+
+![GridView Builder Example](https://static.javatpoint.com/tutorial/flutter/images/flutter-gridview2.png)
+
+
 
 
 
