@@ -224,6 +224,12 @@ HTTP GET http://www.appdomain.com/users/123/address
 
 ###### POST
 
+POST ကတော့ information တွေကို update ချင်တယ် or အသစ်ထပ်ထည့်ချင်တယ် ဆိုရင် သုံးပါတယ်။
+
+ကျွန်တော်တို့ POST Method ကို ပို့လို့  အောင်မြင်တယ်ဆိုရင်  201 created ဖြစ်ပါတယ်။
+
+
+
 
 
 ###### PUT

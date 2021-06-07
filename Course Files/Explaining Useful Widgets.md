@@ -10,7 +10,7 @@
 - [TextField](#textfield) 
 - [Text](#text) 
 - [Image(Both Network and Asset)](#imageboth-network-and-asset) 
-- [Expanded](#expanded) 
+- [Expanded And Flexible](#expandedandflexible) 
 - [Rows and Columns](#rows-and-columns)
 -  [ListView/GridView](#listviewgridview)
 -  [SingleChildScrollView](#singlechildscrollview)
@@ -633,25 +633,11 @@ Container(
 
 
 
-## Expanded
+## Expanded and Flexible
 
-Helo world
+### Expanded
 
-gg
-
-wee
-
-jefkjek
-
-kejfkejf
-
-efkjekfj
-
-kfjekfjek
-
-ekjfkejfkej
-
-fkejfkejfkej
+### Flexible
 
 ## Rows and Columns
 
