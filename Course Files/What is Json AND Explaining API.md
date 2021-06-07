@@ -248,10 +248,6 @@ HTTP PUT http://www.appdomain.com/users/123
 HTTP PUT http://www.appdomain.com/users/123/accounts/456
 ```
 
-
-
-###### DELETE
-
 ###### DELETE
 
 ဒီနာမည် ပြောတဲ့အတိုင်း ရှိနေတဲ့ data ကို ဖျက်တာပါ။
@@ -266,12 +262,6 @@ HTTP DELETE http://www.appdomain.com/users/123/accounts/456
 
 
 အဲလောက်ဆို ကျွန်တော်တို့ ဆက်သွားဖို့ အဆင်ပြေပါပြီ။
-
-
-
-
-
-
 
 
 
