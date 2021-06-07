@@ -228,16 +228,52 @@ POST ကတော့ information တွေကို update ချင်တယ်
 
 ကျွန်တော်တို့ POST Method ကို ပို့လို့  အောင်မြင်တယ်ဆိုရင်  201 created ဖြစ်ပါတယ်။
 
-
-
-
+```http
+HTTP POST http://www.appdomain.com/users
+HTTP POST http://www.appdomain.com/users/123/accounts
+```
 
 ###### PUT
+
+PUT ကို ရှိပြီးသားdata ကို update လုပ်ချင်တဲ့ အချိန်မှာသုံးပါတယ်။
+
+တကယ်လို့ ဒီပေးလိုက်တဲ့ DATA တွေ ရှိတဲ့ အချိန်မှာ အသစ်ပြန်ဆောက်ပေးတယ်။ အဲအခါကျရင် 201 CREATED ပြန်ပေးတယ်။
+
+modified ဖြစ်ရင်တော့ ကျွှန်တော် တို့ 200(Ok) ပြန်ပြပေးတယ်။
+
+> POST နဲ့ PUT ရဲ့ ခြားနားချက်က ဘာလဲဆိုတော့ POST Body သည် resource collection နဲ့ လုပ်ရမယ် PUT ကတော့ single Resource တစ်ခုပဲဖြစ်တယ်။
+
+```http
+HTTP PUT http://www.appdomain.com/users/123
+HTTP PUT http://www.appdomain.com/users/123/accounts/456
+```
 
 
 
 ###### DELETE
 
+###### DELETE
+
+ဒီနာမည် ပြောတဲ့အတိုင်း ရှိနေတဲ့ data ကို ဖျက်တာပါ။
+
+Response အိုကေတယ်ဆိုရင် 200(OK) ပြန်ပါတယ်။ မရသွားရင်တော့ 204(No Content ) ပေါ်ပါတယ်။
+
+```http
+HTTP DELETE http://www.appdomain.com/users/123
+HTTP DELETE http://www.appdomain.com/users/123/accounts/456
+```
 
 
-###### PATCH
+
+အဲလောက်ဆို ကျွန်တော်တို့ ဆက်သွားဖို့ အဆင်ပြေပါပြီ။
+
+
+
+
+
+
+
+
+
+
+
