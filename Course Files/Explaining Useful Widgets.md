@@ -10,10 +10,9 @@
 - [TextField](#textfield) 
 - [Text](#text) 
 - [Image(Both Network and Asset)](#imageboth-network-and-asset) 
-- [Expanded And Flexible](#expandedandflexible) 
+- [Expanded](#expanded) 
 - [Rows and Columns](#rows-and-columns)
--  [ListView/GridView](#listviewgridview)
--  [SingleChildScrollView](#singlechildscrollview)
+- [ListView/GridView](#listviewgridview)
 
 ## Container
 
@@ -120,21 +119,53 @@ Padding(
 
 ## Card
 
+Flutter Card ဆိုတာ ကတော့ ကျွန်တော်တို့ Flutter မှာ ListView or GridView တွေမှာ တွဲသုံးတာကို မြင်ရတာများပါတယ်။
 
+သူ့မှာတော့ ဘေးဘောင်တွေကွေးပြီး Shadow တွေရှိတယ်။
 
+ရေးကြည့်ကြမယ်လေ
 
+```dart
+Card(  
+	shape: RoundedRectangleBorder(  
+	borderRadius: BorderRadius.circular(15.0),  
+	),  
+	color: Colors.red,  
+	elevation: 10,  
+    child: Column(  
+		mainAxisSize: MainAxisSize.min,  
+        children: <Widget>[  
+        	const ListTile(  
+                leading: Icon(Icons.album, size: 60),  
+                title: Text(  
+                  'Sonu Nigam',  
+                  style: TextStyle(fontSize: 30.0)  
+             ),  
+             	subtitle: Text(  
+                  'Best of Sonu Nigam Music.',  
+                  style: TextStyle(fontSize: 18.0)  
+                ),  
+              ),  
+              ButtonBar(  
+                children: <Widget>[  
+                  RaisedButton(  
+                    child: const Text('Play'),  
+                    onPressed: () {/* ... */},  
+                  ),  
+                  RaisedButton(  
+                    child: const Text('Pause'),  
+                    onPressed: () {/* ... */},  
+                  ),  
+                ],  
+              ),  
+            ],  
+	),  
+)
+```
 
+Output
 
-
-
-
-
-
-
-
-
-
-
+![Flutter Card Example](https://static.javatpoint.com/tutorial/flutter/images/flutter-card.png)
 
 
 
@@ -454,23 +485,41 @@ OutlineButton(
 
 ## TextField
 
-Helo world
+**TextField** က input box တစ်မျိုးပဲ။ဘယ်နေရာမှာ သုံးလဲဆိုတော့ နာမည်၊ စကား၀ှက် တို့ လိပ်စာတို့ ထည့်တဲ့နေရာမှာ သုံးတာပေါ့။ မျက်လုံးထဲမြင်အောင် ပြတာကတော့ ပိုကောင်းမယ်။
 
-gg
+![Flutter Text Field Example](https://lh3.googleusercontent.com/proxy/WwZy5_qN0kyiSzAcJMBjEGsB6T8Axk0O1-q6ry_r4cElzxrTL1IxkU3asGlU1DhM1ZQP8gM8KKAycy2tvyfDcyair_fh4VzAh-IYnZI22YEVi7EvGzSiVInFrggFFpENJD0)
 
-wee
 
-jefkjek
 
-kejfkejf
+TextField properties 
 
-efkjekfj
+- **decoration**: TextField ရဲ့ decoration ပုံစံတွေလုပ်နိုင်ဖို့
+- **border**:TextField ရဲ့ ဘောင်ကို သုံးနိုင်ဖို့
+- **labelText**:  TextField ကို select လုပ်တဲ့အချိန်ကျရင် ပေါ်လာမယ့် စာသား
+- **hintText**: TextField မှာ ဘာထည့် ရမလဲဆိုတာပြပေးနေတဲ့ hint
+- **icon**:  TextField ထဲမှာ ထည့်ဖို့ icon
 
-kfjekfjek
+```dart
+child: TextField(  
+	decoration: InputDecoration(  
+	border: OutlineInputBorder(),  
+	labelText: 'Password',  
+		hintText: 'Enter Password',  
+    ),  
+),  
+```
 
-ekjfkejfkej
 
-fkejfkejfkej
+
+Output::
+
+![Flutter TextField](https://static.javatpoint.com/tutorial/flutter/images/flutter-textfield.png)
+
+
+
+For more testing and showing around, please follow this [link]().
+
+[Full Article here](https://www.javatpoint.com/flutter-textfield)
 
 ## Text
 
@@ -633,11 +682,88 @@ Container(
 
 
 
-## Expanded and Flexible
+## Expanded
 
-### Expanded
+နောက်မျိုးဆက် widget ကို main axis  တစ်လျှောက် နေရာယူစေချင်ရင် သုံးတယ်။(Row ဆို Horizontal Column ဆို Vertical)
 
-### Flexible
+Properties
+
+- **child**: Widget နောက်မျိုးဆက်ကို ထားဖို့
+- **fit**:ဒီကောင်မှာနှစ်မျိုးရှိတယ် FlexFit.tight နဲ့ FlexFit.loose. ပထမက child ကို သူရှိတဲ့နေရာပဲဖြည့်ခိုင်းတာ နောက်တစ်ခုကကျ ရှိသမျှ နေရာလွတ်ကို သူ့ကို ပေးတာ
+- **flex**: Expanded ရဲ့ အချိုး ပေါ်မူတည်ပြီး နေရာခွဲဖို့အတွက်
+
+ကုဒ်စရေးကြမယ်
+
+```dart
+void main() {
+  runApp(MaterialApp(
+    home: Scaffold(
+      appBar: AppBar(
+          title: Text('Geeksforgeeks'),
+          backgroundColor: Colors.greenAccent[400],
+          leading: IconButton(
+            icon: Icon(Icons.menu),
+            tooltip: 'Menu',
+            onPressed: () {},
+          )),
+      body: Center(
+          child: Column(
+        children: <Widget>[
+          Container(
+            child: Center(
+              child: Text(
+                'First widget',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            color: Colors.blue,
+            height: 100,
+            width: 200,
+          ),
+          Expanded(
+            child: Container(
+              child: Center(
+                child: Text(
+                  'Second widget',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              color: Colors.amber,
+              width: 200,
+            ),
+          ),
+          Container(
+            child: Center(
+              child: Text(
+                'Third widget',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            color: Colors.orange,
+            height: 100,
+            width: 200,
+          ),
+        ],
+      )),
+    ),
+    debugShowCheckedModeBanner: false,
+  ));
+}
+```
+
+Output:
+
+![Flutter Expanded Explained](https://media.geeksforgeeks.org/wp-content/uploads/20201022232741/colexp.jpg)
+
+
+
+
 
 ## Rows and Columns
 
@@ -906,23 +1032,3 @@ The Output will be
 
 
 
-
-## SingleChildScrollView
-
-Helo world
-
-gg
-
-wee
-
-jefkjek
-
-kejfkejf
-
-efkjekfj
-
-kfjekfjek
-
-ekjfkejfkej
-
-fkejfkejfkej
